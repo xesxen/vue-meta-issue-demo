@@ -29,7 +29,13 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/
+                exclude: /node_modules\/(?!vue-meta)/,
+                options: {
+                    presets: [
+                        "@babel/preset-env",
+                        '@vue/cli-plugin-babel/preset'
+                    ]
+                }
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
